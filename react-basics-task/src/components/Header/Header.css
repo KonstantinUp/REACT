@@ -1,0 +1,11 @@
+.header{
+    display: flex;
+    margin: 30px;
+}
+.header-label{
+    font-family: 'Josefin Slab', serif;
+}
+.header-filter{
+    display: flex;
+    margin-left: auto;
+}

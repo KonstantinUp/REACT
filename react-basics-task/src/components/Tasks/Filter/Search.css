@@ -1,0 +1,24 @@
+.search-input{
+    display: flex;
+    margin-top: 18px;
+}
+
+.search-checkbox {
+    width: 200px;
+    margin-top: 30px;
+
+}
+.search-checkbox  label{
+    font-family: 'Josefin Slab', serif;
+}
+.search{
+    width: 200px !important;
+    font-family: 'Josefin Slab', serif !important;
+    font-size: 20px !important;
+    font-weight:bold;
+}
+.checkbox{
+    font-family: 'Josefin Slab', serif !important;
+    font-size: 20px !important;
+    font-weight:bold;
+}

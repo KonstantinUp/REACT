@@ -1,0 +1,44 @@
+
+
+.category-item{
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+}
+
+.category-item.active > .paper{
+    background-color: #00bcd4!important;
+}
+
+.paper {
+    display: flex;
+}
+.paper .main{
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.paper .main .title {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    flex-grow: 1;
+}
+.paper .main .expand {
+    width: 48px;
+}
+
+.paper .main .actions{
+    display: flex;
+}
+.category-itemactive  > .paper{
+    background-color: #00bcd4!important;
+}
+.children.collapsed {
+    height: 0px;
+    overflow: hidden;
+}
+.children{
+    padding-left: 60px;
+}
