@@ -41,9 +41,24 @@ body,html{
   color:white;
   border-radius: 5px;
   outline: none;
-
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 .button:active{
-
-  background: #000b22;
+  background: white;
+  color: #110a22;
+}
+.input{
+  margin-left: 20px;
+  width: 200px;
+  border-radius: 5px;
+  border: 2px solid black;
+  height: 25px;
+}
+.input:focus{
+  border: 2px solid #ff9792;
+  border-radius: 5px;
+  outline: none;
 }
