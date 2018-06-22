@@ -6,8 +6,7 @@ import {Reducer} from '../task/reducer';
 export const makeReducer = () => {
 
     return combineReducers({
-
         ...Reducer,
-
     });
+
 };

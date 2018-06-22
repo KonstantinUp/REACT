@@ -51,7 +51,6 @@ body,html{
   color: #110a22;
 }
 .input{
-  margin-left: 20px;
   width: 200px;
   border-radius: 5px;
   border: 2px solid black;
@@ -61,4 +60,20 @@ body,html{
   border: 2px solid #ff9792;
   border-radius: 5px;
   outline: none;
+}
+.wrapper-form{
+  display:flex;
+  flex-direction: column;
+  width: 560px;
+  height: 80px;
+  justify-content: flex-end;
+}
+.wrapper-form_elements{
+  margin-top: 20px;
+}
+.error{
+  font-size: 18px;
+  font-weight: bolder;
+  color: #3d31ff;
+
 }
