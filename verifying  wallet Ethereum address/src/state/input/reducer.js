@@ -7,8 +7,11 @@ const handlers = {
         value: payload.value
     }),
     [actions.setError]: (state, { payload }) => Object.assign({}, state, {
-            error: payload.error
-        })
+         error: payload.error
+        }),
+    [actions.resetError]: (state) => Object.assign({}, state, {
+        error: undefined
+    })
 
 };
 const initialState = {};
