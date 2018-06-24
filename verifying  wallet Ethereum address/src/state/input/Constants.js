@@ -1,1 +1,1 @@
-export const NAME_SPACE = 'VALUE';
+export const NAME_SPACE = 'INPUT_REDUCER';

@@ -7,13 +7,23 @@ const handlers = {
         value: payload.value
     }),
     [actions.setError]: (state, { payload }) => Object.assign({}, state, {
-         error: payload.error
+        error: payload.error,
+        validAddress: payload.validAddress
         }),
+    [actions.setValid]: (state,{ payload }) => Object.assign({}, state, {
+        error: undefined,
+        validAddress: payload.validAddress
+    }),
     [actions.resetError]: (state) => Object.assign({}, state, {
-        error: undefined
+        error: undefined,
+        validAddress: undefined
+    }),
+    [actions.closeAlert]: (state) => Object.assign({}, state, {
+        validAddress: undefined
     })
 
 };
+
 const initialState = {};
 
-export const Reducer = { [NS]: handleActions(handlers, initialState) };
+export const inputReducer = { [NS]: handleActions(handlers, initialState) };

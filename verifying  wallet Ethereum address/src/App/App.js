@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './App.css';
 import styled from 'styled-components';
 import {connect} from "react-redux";
-import {setValue,setError,getValue,getError,isAlertVisible,resetError} from "../state/input/index";
-import isAddress from '../utils/isAddress'
+import {isAlertVisible,closeAlert} from "../state/input/index";
 import InputComponent from '../components/input'
 import Alert from 'react-s-alert';
 import 'react-s-alert/dist/s-alert-default.css';
@@ -19,69 +18,42 @@ const Div = styled.div`
 
 class App extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state = {
-
-        };
-        this.handleChange = this.handleChange.bind(this);
-        this.validAddress = this.validAddress.bind(this);
-        this.onFocus = this.onFocus.bind(this)
+        this.state={};
     }
 
-    validateAddress(){
-        this.props.setError(isAddress(this.props.value))
-    }
-
-    handleChange(event) {
-        const payload = { value: event.target.value};
-        this.props.setValue(payload);
-    }
-
-    onFocus () {
-        this.props.resetError();
-        Alert.closeAll();
-    }
-
-    static getDerivedStateFromProps(props, state) {
-
+    static getDerivedStateFromProps(props) {
         if (props.isAlertVisible) {
             Alert.success('<div class="success-message">This Ethereum address is valid </div>', {
                 position: 'top',
                 effect: 'slide',
                 html: true,
                 timeout: 'none',
-                onClose: ()=> {
-                    props.resetError();
+                onClose: () => {
+                    props.closeAlert();
                 }
             });
         }
         return null;
     }
 
-  render() {
-        let error = !this.props.error ? '':this.props.error;
-        let value = !this.props.value ? '': this.props.value;
-    return (
-        <Div>
-            <Alert stack={false} />
-            <InputComponent error={error} value={value}  onFocus={ this.onFocus } validAddress={this.validateAddress} handleChange={this.handleChange}/>
-        </Div>
-    );
-  }
+    render() {
+        return (
+            <Div>
+                <Alert stack={false}/>
+                <InputComponent/>
+            </Div>
+        );
+    }
 }
 
 const mapDispatchToProps = ({
-    setValue,
-    setError,
-    resetError
+    closeAlert
 });
 
-const mapStateToProps = (state)=>({
-    error :getError(state),
-    value :getValue(state),
-    isAlertVisible:isAlertVisible(state),
-
+const mapStateToProps = (state) => ({
+    isAlertVisible: isAlertVisible(state),
 });
 
-export default connect(mapStateToProps,mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
